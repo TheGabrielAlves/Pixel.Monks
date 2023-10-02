@@ -1,5 +1,6 @@
 function pm(eventObject) {
     (function () {
+    console.log('Chamou o GIT')
       function APIMM(url, parametros) {
         fetch(url, {
           method: 'POST',
