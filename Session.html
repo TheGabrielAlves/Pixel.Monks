@@ -1,12 +1,11 @@
-<script>
-(function () {
-  function APIMM(url, parametros) {
+function pm(eventObject) {
+   function APIMM(url, eventObjectLocal) {
     fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(parametros)
+      body: JSON.stringify(eventObjectLocal)
     })
       .then(function (response) {
         return response.json();
@@ -40,27 +39,22 @@
   //..................................................................
   // Parametros do evento.............................................
  
-   var eventObject = {
-    eventName: "session",
-    client: "ec-sp-00",  // definir um codigo unico para o cliente
+   eventObjectLocal = {
+    eventName: eventObject.eventName,
+    client: eventObject.client,  // definir um codigo unico para o cliente
     sessionId: sessionId,
     deviceId: undefined,
-    url: {{Page URL}},
+    url: eventObject.url,
     ref: document.referrer,
     pointers: Tpointer,
-    params:undefined,
+    params:eventObject.params,
   };
   
   //..................................................................
   
   var urlDaAPI = "https://pixel-monks-hg62gkdjeq-rj.a.run.app/hit";
-  var parametros = {
-    method: 'POST',
-    body: JSON.stringify(eventObject)
-  };
  
-  APIMM(urlDaAPI, eventObject);
+  APIMM(urlDaAPI, eventObjectLocal);
 
+}
 
-})();
-</script>
