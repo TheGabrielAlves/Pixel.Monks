@@ -63,7 +63,7 @@ function pm(eventObject) {
             deviceId: undefined,
             url: document.referrer,
             ref: document.referrer,
-            pointers: Tpointer,
+            pointers: 'P-' + hash + '-' + Date.now(),
             params: eventObject.params,
         };
         APIMM(urlDaAPI, eventObjectLocal);
