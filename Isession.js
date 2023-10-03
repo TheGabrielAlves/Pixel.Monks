@@ -39,15 +39,15 @@ function pm(eventObject) {
   //..................................................................
   // Parametros do evento.............................................
  
-   var eventObject = {
-    eventName: "session",
-    client: "ec-sp-00",  // definir um codigo unico para o cliente
+   eventObject = {
+    eventName: eventObject.eventName,
+    client: eventObject.client,  // definir um codigo unico para o cliente
     sessionId: sessionId,
     deviceId: undefined,
-    url: {{Page URL}},
+    url: eventObject.url,
     ref: document.referrer,
     pointers: Tpointer,
-    params:undefined,
+    params:eventObject.params,
   };
   
   //..................................................................
@@ -60,5 +60,4 @@ function pm(eventObject) {
  
   APIMM(urlDaAPI, eventObject);
 
-
-  }
+}
