@@ -1,5 +1,6 @@
 function pm(eventObject) {
   function APIMM(url, eventObjectLocal) {
+  consolo.log("Deu certo 1")
    fetch(url, {
      method: 'POST',
      headers: {
