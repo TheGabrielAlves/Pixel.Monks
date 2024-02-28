@@ -1,5 +1,5 @@
 function APIMM(e) {
-    navigator.sendBeacon("https://project-p-server-hg62gkdjeq-rj.a.run.app/hit", JSON.stringify(e));
+    navigator.sendBeacon("https://34.128.167.121:80", JSON.stringify(e));
 }
 
 function pm(e) {
@@ -38,7 +38,7 @@ function pm(e) {
                 let t = sessionStorage.getItem("MMhash");
                 return "P-" + t + "-" + Date.now()
             }(),
-            client_id: i.client_id
+            customer_id: i.client_id
         };
         switch (i.type) {
         case "gen":
