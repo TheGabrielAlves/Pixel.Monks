@@ -1,5 +1,5 @@
 function APIMM(eventObjectLocal) {
-    fetch("https://34.128.167.121:80", {
+    fetch("http://34.128.167.121:80", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
